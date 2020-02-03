@@ -18,13 +18,11 @@ View(head(descript))
 rownames(descript) <- paste0("X", descript$Sample.Name)
 
 # ter certeza que sao as mesmas amostras
-
 common.samples <- intersect(colnames(countdata), rownames(descript))
 table(colnames(countdata) == rownames(descript))
 setdiff(colnames(countdata), rownames(descript)) #"X6_2_.NS"
 setdiff(rownames(descript), colnames(countdata)) #"X6_2_NS"
 colnames(countdata) <- gsub("X6_2_.NS", "X6_2_NS", colnames(countdata))
-
 
 # create DEGlist
 y <- DGEList(counts = countdata, genes = row.names(countdata), group= descript$Group)
@@ -46,10 +44,7 @@ sample.var <- apply(cp, 2, var)
 sample.var <- sort(sample.var)
 #barplot(sample.var, las=2)    # NEEDS SCALATION! PLEASE ATTENTION! - Do quality control if it is possible
 
-
 boxplot(x = y.1)
-
-
 boxplot(x = cp, use.cols = TRUE)
 
 #View(cp)
@@ -71,17 +66,14 @@ ggplot(pcapanel, aes(PC2, PC3, color=descript$Group, shape = as.character(descri
   ylab(paste0("PC3: ",percentVar[3],"% variance"))
  
 # FIND PERTURBED GENES IN CONTROL SAMPLES
-
 pert_genes <- data.frame(sort(abs(pca$rotation[,"PC1"]), decreasing=TRUE)[1:5000])
 list(pert_genes)
 genes_to_remove <- rownames(pert_genes)
-
 View(genes_to_remove)
 setdiff(genes_to_remove, rownames(countdata)) # 0
 
 
 # DO THE ANALYSIS AGAIN, WITHOUT THESE GENES
-
 nrow(countdata) # 23930
 countdata_after <- countdata[setdiff(rownames(countdata), genes_to_remove),]
 nrow(countdata_after) 
@@ -114,7 +106,6 @@ ggplot(pcapanel, aes(PC1, PC2, color=descript$Group, shape = as.character(descri
 
 
 ##### PCA without controls
-
 View(descript)
 descript_OUT <- descript[descript$Group != "NI_NS",]
 
@@ -163,13 +154,10 @@ ggplot(pcapanel, aes(PC1, PC2, color=descript_OUT$Group, shape = as.character(de
   xlab(paste0("PC1: ",percentVar[1],"% variance")) +
   ylab(paste0("PC2: ",percentVar[2],"% variance"))
 
-
-
 ############################## PCA SCRIPT ENDS HERE!!!!!! ################################
   
   
 # Signal to noise ratio - QUALITY CONTROL - Not part of the PCA script
-  
 gene_var <- apply(cp, 1, var)
 gene_mean <- rowMeans(cp)
 gene_mean[1:5]
@@ -236,8 +224,6 @@ countdata_off <- as.matrix(countdata_off)
 
 count_vst <- varianceStabilizingTransformation(countdata_off)
 boxplot(count_vst)
-
-
 
 
 ############# without controls
