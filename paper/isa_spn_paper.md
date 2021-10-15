@@ -1,6 +1,6 @@
 #paper
 
-# _In vitro_ re-stimulation of splenocytes to detect immune response to pneumococcal infection**
+# _In vitro_ re-stimulation of splenocytes to detect immune response to pneumococcal infection
 
 Author: [[Isabelle Moscardini]]
 
