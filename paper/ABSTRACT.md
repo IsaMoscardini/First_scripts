@@ -1,0 +1,7 @@
+#paper #abstract
+
+The stimulation of immune system cells with live or killed bacteria is essential for understanding the host response to pathogens. In the present study, we propose a model combining cytokine and transcriptomic assays on mouse [[splenocytes]], to describe the [[immune recall]] in the days following pneumococcal infection.
+
+Mice were sacrificed at days 1, 2, 4, and 7 after _Streptococcus pneumoniae_ ([[TIGR4 serotype 4]]) infection and splenocytes were cultured in the presence or absence of the same inactivated strain of bacteria to access the transcriptomic and cytokine profiles. The stimulation of infected samples led to a higher number of differentially expressed genes than infection or stimulation alone, resulting in the enrichment of 40 unique blood transcription modules, including many pathways related to adaptive immunity and cytokines. Together with transcriptomic data, cytokines levels suggested the presence of a recall immune response involving both innate and adaptive immunity, and stronger from day four after infection. 
+
+Dimensionality reduction and feature selection identified key variables of this recall immune response and the genes associated with the increased cytokine concentrations. This model could study the immune responses involved in pneumococcal infection and possibly monitor vaccine and experimental therapies efficacy in future studies.\p**
